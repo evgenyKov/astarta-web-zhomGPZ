@@ -1,0 +1,27 @@
+doctype html
+html
+	head
+		title #{title}
+		include includes/head
+		style .info {color:navy;font-weight:bold;float: right;}
+	body
+		include includes/menu
+		div#panel(style="margin-top:-17px;margin-bottom:-8px;") &nbsp;
+			span &nbsp;
+				input#ttn(style="width: 70px;",placeholder="№")
+			span &nbsp;			
+				input#source(style="width: 250px;",placeholder="Постачальник")
+			span &nbsp;			
+				input#from.data(style="width: 85px;",placeholder="З")
+			span &nbsp;			
+				input#to.data(style="width: 85px;",placeholder="До")
+			span &nbsp;			
+				input#driver(style="width: 200px;",placeholder="Водій")
+			span &nbsp;			
+				input#atp(style="width: 300px;",placeholder="Перевізник")
+			a#reload.btn.btn-info.btn-sm(href="#",style="float:right;")
+				span.glyphicon.glyphicon-plus &nbsp;Оновити &nbsp;&nbsp;
+		div#report(style="height: 700px;margin-top:12px;")
+		include includes/report/showTTN
+		include includes/scripts
+		script(type="text/javascript",src="js/report.js")

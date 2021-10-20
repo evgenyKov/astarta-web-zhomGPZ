@@ -1,0 +1,133 @@
+doctype html
+html
+	head
+		title #{title}
+		include includes/head
+		script
+			|var pref="95#{year}#{zavod}",
+			|	YEAR="#{year}",
+			|	ZAVOD="#{zavod}"
+		style
+			|.red {background-color:#FFEDED;}
+			|.green {background-color:#EBFCDE;}			
+			|.container {font-size: 12pt !important;}
+			|span.info {font-weight: bold; color: navy;}
+			|input,
+			|.select2-drop,
+			|.select2-container .select2-choices .select2-search-field input,
+			|.select2-container .select2-choice,
+			|.select2-container .select2-choices {
+			|font-size: 14pt !important;
+			|}			
+			
+			
+	body
+		include includes/menu
+		div#grid(style="height:200px;")
+		|<div class="container">
+		|   <div class="row">
+		|        <div>&nbsp;</div>
+		|    </div>
+		|   <div class="row">
+		|        <div class="col-sm-6 col-md-5 col-md-offset-3">
+		|			<form id="taraForm" class="form-signin" method="POST">
+		|				<input id="avto" name="avto" type="text" class="form-control" placeholder="&nbsp;&nbsp;Водій" required autofocus />
+		|				<input id="client" name="client" type="text" class="form-control"/>					
+		|				<input id="type" name="type" type="text" class="form-control" disabled placeholder="Підстава відпуску"/>
+		|				<input type="hidden" id="avtoId" name="avtoId" />
+		|				<br/>
+		|			</form>
+		|        </div>
+		|    </div>
+		|   <div class="row red avto">
+		|        <div>&nbsp;</div>
+		|    </div>
+		|    <div class="row red avto" >
+		|        <div class="col-sm-2 col-md-2">
+		|        </div>
+		|        <div class="col-sm-2 col-md-2">
+		|			Прізвище:<br>
+		|			<span class="info" id="lastName">&nbsp;</span class="info"><br>
+		|        </div>
+		|       <div class="col-sm-2 col-md-2">
+		|			І'мя:<br>
+		|			<span class="info" id="firstName">&nbsp;</span class="info"><br>
+		|        </div>
+		|        <div class="col-sm-2 col-md-2">
+		|			По-батькові:<br>
+		|			<span class="info" id="middleName" /><br>
+		|        </div>
+		|        <div class="col-sm-2 col-md-2">
+		|			Пoсвідчення:<br>
+		|			<span class="info" id="drivingPermit" /><br>
+		|        </div>
+		|    </div>
+		|    <div class="row red avto">
+		|        <div class="col-sm-2 col-md-2">
+		|        </div>
+		|        <div class="col-sm-2 col-md-2">
+		|			№ машини:<br>
+		|			<span class="info" id="nomer">&nbsp;</span class="info"><br>			
+		|        </div>
+		|        <div class="col-sm-2 col-md-2">
+		|			№ причепа:<br>
+		|			<span class="info" id="trailer">&nbsp;</span class="info"><br>			
+		|        </div>
+		|        <div class="col-sm-2 col-md-2">
+		|			Марка:<br>
+		|			<span class="info" id="avtoTypename" /><br>
+		|        </div>
+		|        <div class="col-sm-2 col-md-2">
+		|			АТП:<br>
+		|			<span class="info" id="atpname" /><br>
+		|        </div>
+		|    </div>
+		|    <div class="row red client">
+		|        <div class="col-sm-2 col-md-2">
+		|        </div>
+		|        <div class="col-sm-4 col-md-4">
+		|			Покупець:<br>
+		|			<span class="info" id="name">&nbsp;</span class="info"><br>			
+		|        </div>
+		|        <div class="col-sm-2 col-md-2">
+		|			ЄДРПОУ:<br>
+		|			<span class="info" id="EDRPOU">&nbsp;</span class="info"><br>			
+		|        </div>
+		|        <div class="col-sm-2 col-md-2">
+		|			Пункт розгрузки:<br>
+		|			<span class="info" id="targetPunct" /><br>
+		|        </div>
+		|    </div>	
+		|    <div class="row red orderType">
+		|        <div class="col-sm-2 col-md-2">
+		|        </div>
+		|        <div class="col-sm-4 col-md-4">
+		|			Підстава:<br>
+		|			<span class="info" id="order">&nbsp;</span class="info"><br>			
+		|        </div>
+		|        <div class="col-sm-2 col-md-2">
+		|			Ліміт відбору:<br>
+		|			<span class="info" id="limit" /><br>
+		|        </div>
+		|        <div class="col-sm-2 col-md-2">
+		|			Вибрано:<br>
+		|			<span class="info" id="netto" /><br>
+		|        </div>
+		|        <div class="col-sm-2 col-md-2">
+		|			Залишок:<br>
+		|			<span class="info" id="rest" /><br>
+		|        </div>
+		|    </div>	
+		|   <div class="row orderType">
+		|		<div>&nbsp;</div>
+		|	</div>
+		|   <div class="row">
+		|        <div class="col-sm-8 col-md-8 col-md-offset-3">
+		|			<a class="btn btn-lg btn-success disabled" id="submit"><span class="glyphicon glyphicon-eject">&nbsp;ЗВАЖИТИ</a>
+		|			<a href="#" class="btn btn-lg btn-info disabled" id="print"><span class="glyphicon glyphicon-print"></span>&nbsp;ДРУКУВАТИ ТАЛОН</a>
+		|			<a href="#" class="btn btn-lg btn-danger hidden" id="delete"><span class="glyphicon glyphicon-remove"></span>&nbsp;ВИДАЛИТИ ТАЛОН</a>
+		|        </div>
+		|    </div>
+		|</div>
+		include includes/scripts	
+		script(type="text/javascript",src="js/tara.js")

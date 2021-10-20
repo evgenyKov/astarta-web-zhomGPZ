@@ -1,0 +1,42 @@
+|<nav class="navbar navbar-inverse" role="navigation">
+|	<div class="container-fluid">
+|		<div class="navbar-header">
+|			<a class="navbar-brand" href="#">Астарта-Київ&nbsp;&nbsp;&nbsp;!{testVarning}&nbsp;&nbsp;&nbsp;</a>
+|		</div>
+|		<div class="navbar-content">
+|			<ul class="nav navbar-nav pull-left">
+|				<li class="divider-vertical"></li>
+- for (var i in menu) {
+-	if (menu[i].page == page)
+				<li><a href="" id="#{menu[i].page}menu" style="color:yellow;">#{menu[i].title}</a></li>
+-	else {
+-		if (menu[i].childs && menu[i].childs.length > 0) {
+				<li class="dropdown">
+				<a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" id="#{menu[i].page}menu">#{menu[i].title}</a>				
+- 			}			
+-		else {
+				<li>
+				<a href="#{menu[i].page}.html" id="#{menu[i].page}menu">#{menu[i].title}</a>				
+- 			}							
+					
+-		if (menu[i].childs && menu[i].childs.length == 0)
+				</li>
+-		if (menu[i].childs && menu[i].childs.length > 0) {
+					<ul class="dropdown-menu" role="menu" aria-labelledby="drop">
+-		for (var j in menu[i].childs && menu[i].childs)
+						<li><a tabindex="-1" href="#{menu[i].childs && menu[i].childs[j].page}.html">#{menu[i].childs && menu[i].childs[j].title}</a></li>
+					</ul>
+-		if (menu[i].childs && menu[i].childs.length > 0)
+				</li>
+- }
+- }
+- }
+|			</ul>
+|			<ul class="nav navbar-nav navbar-right">
+|				<li>
+|					<a href="logout.html"><input type="hidden" id="currentUserRoles" value="#{roles}" /><span id="currentUser">#{user}&nbsp;<b>ВИХІД</b></span>&nbsp;&nbsp;<span class="glyphicon  glyphicon-log-out"></span></a>
+|				</li>
+|			</ul>
+|		</div>	
+|	</div>
+|</nav>

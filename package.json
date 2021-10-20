@@ -1,0 +1,24 @@
+{
+  "name": "zhomGPZ",
+  "version": "1.0.0",
+  "description": "Программа приемки отпуска жома",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kovalchuk",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "bwip-js": "^2.0.9",
+    "express": "^4.15.4",
+    "express-session": "^1.15.5",
+    "iconv-lite": "^0.6.2",
+    "jade": "^1.11.0",
+    "mssql": "^7.2.1",
+    "net": "^1.0.2",
+    "node-excel-export": "^1.4.4",
+    "tedious": "^2.0.0",
+    "tedious-connection-pool": "^1.0.5"
+  }
+}

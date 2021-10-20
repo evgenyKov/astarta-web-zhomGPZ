@@ -1,0 +1,86 @@
+div#showTTN.modal.fade.bs-example-modal-lg(tabindex="-1",data-backdrop="static",role="dialog",aria-hidden="true")
+	div.modal-dialog.modal-lg
+		div.modal-content
+			div.modal-header
+				button.close(type="button",data-dismiss="modal",aria-hidden="true") &times;
+				h3 Інформація по ТТН
+			div.modal-body
+				div.container
+					div.row
+						div.col-xs-2 
+							span Номер ТТН : 
+							span#ttnNomerTTN.info
+						div.col-xs-2
+							span Дата ТТН : 
+							span#ttnBruttoDate.info
+						div.col-xs-2
+							span Жом :
+							span#ttnZhomTypeName.info
+						div.col-xs-4
+							span Клієнт :
+							span#ttnClientName.info
+					br
+					div.row
+						div.col-xs-2
+							span Нетто :
+							span#ttnNetto.info
+						div.col-xs-2
+							span Брутто :
+							span#ttnBrutto.info
+						div.col-xs-2
+							span Тара :
+							span#ttnTara.info
+						div.col-xs-4
+							span
+								a(href='javascript: setOrderSelectLink()') Підстава
+							span#ttnOrderTypeName.info
+					br
+					div.row
+						div.col-xs-2
+							span Вміст СР :
+							span#ttnKoef.info
+						div.col-xs-2
+							span Базовий вміст СР : 
+							span#ttnPereschet.info
+						div.col-xs-2
+							span Залік : 
+							span#ttnZachet.info
+						div.col-xs-2
+							span Ціна : 
+							span#ttnPrice.info
+						div.col-xs-2
+							span Сума :
+							span#ttnSumma.info
+					br
+					div.row
+						div.col-xs-2
+							span Накладна :
+							span#ttnOrderN.info
+						div.col-xs-2
+							span Ліміт : 
+							span.info#ttnLimit
+						div.col-xs-2
+							span Вибрано :
+							span.info#ttnNettoSum
+						div.col-xs-2
+							span Залишок :
+							span.info#ttnRest
+					br
+					div.row
+						div.col-xs-2
+						div.col-xs-2
+						div.col-xs-2
+							a#splitTTN.btn.btn-sm.btn-info.disabled(href="#")
+								span.glyphicon.glyphicon-resize-full
+								span &nbsp;&nbsp;Розділити
+						div.col-xs-2
+							a#moveTTN.btn.btn-sm.btn-info.disabled(href="#")
+								span.glyphicon.glyphicon-share
+								span &nbsp;&nbsp;Перенести
+			div.modal-footer
+				a#saveTTN.btn.btn-success(href="#",data-dismiss="modal")
+					span.glyphicon.glyphicon-ok
+					span &nbsp;&nbsp;Зберегти
+				a#closeTTN.btn.btn-danger(href="#",data-dismiss="modal")
+					span.glyphicon.glyphicon-remove
+					span &nbsp;&nbsp;Закрити

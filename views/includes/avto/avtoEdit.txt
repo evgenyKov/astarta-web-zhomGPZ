@@ -1,0 +1,196 @@
+|<div id="avtoInfo" class="modal fade bs-example-modal-lg" tabindex="-1" data-backdrop="static" role="dialog" aria-hidden="true">
+|	<div class="modal-dialog  modal-lg">
+|		<div class="modal-content">
+|			<div class="modal-header">
+|				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+|				<h3>Редагування даних про водія/автомобіль</h3>
+|			</div>
+|			<div class="modal-body">
+|				<div class="container">
+|					<form id="avtoForm">
+|						<div class="row">
+|							<div class="col-xs-3">
+|								<label for="firstname">Ім'я</label>
+|								<input id="firstName" name="firstName" type="text" class="form-control input-sm" placeholder="Імя"/>
+|							</div>
+|							<div class="col-xs-3">
+|								<label for="middleName">По батькові</label>
+|								<input id="middleName" name="middleName" type="text" class="form-control input-sm" placeholder="По батькові"/>
+|							</div>
+|							<div class="col-xs-3">
+|								<label for="lastName">Прізвище</label>
+|								<input id="lastName" name="lastName" type="text" class="form-control input-sm" placeholder="Прізвище"/>
+|							</div>
+|						</div>
+|						<br>
+|						<div class="row">
+|							<div class="col-xs-3">
+|								<label for="drivingPermit">Посвідчення</label>
+|								<input id="drivingPermit" name="drivingPermit" class="form-control input-sm"
+|									placeholder="Посвідчення"/>
+|							</div>
+|							<div class="col-xs-3">
+|								<label for="nomer">Номер</label>
+|								<input id="nomer" name="nomer" class="form-control input-sm" placeholder="Номер"/>
+|							</div>
+|							<div class="col-xs-3">
+|								<label for="trailer">Причіп</label>
+|								<input id="trailer" name="trailer" class="form-control input-sm" placeholder="Причіп"/>
+|                             </div>
+|						</div>
+|						<br>
+|						<div class="row">
+|							<div class="col-xs-4">
+|								<div class="col-xs-10" style="padding: 0px;">
+|									<label for="atpId">АТП</label>
+|									<input id="atpId" name="atpId" type="text" class="form-control input-sm select2" placeholder="АТП"/>
+|								</div>
+|								<div class="col-xs-2">
+|									<button id="removeAtp" style="display:none;" type="button" data-tooltip="tooltip" class="btn-xs btn-danger" data-toggle="modal" data-target="#dialogDelATP" aria-hidden="true" title="Видалити АТП зі списку"><span class="glyphicon glyphicon-remove"></span></button>
+|								</div>
+|							</div>
+|							<div class="col-xs-4 col-xs-offset-1">
+|								<div class="col-xs-10" style="padding: 0px;">
+|									<label for="avtoTypeId">Марка машини</label>
+|									<input id="avtoTypeId" name="avtoTypeId" type="text" class="form-control input-sm select2" placeholder="Марка машини"/>
+|								</div>
+|								<div class="col-xs-2">
+|									<button id="removeMarka" type="button" style="display:none;" data-tooltip="tooltip" class="btn-xs btn-danger" data-toggle="modal" data-target="#dialogDelMarka" aria-hidden="true" title="Видалити марку машини зі списку"><span class="glyphicon glyphicon-remove"></span></button>
+|								</div>
+|							</div>
+|						</div>
+|						<br>
+|						<div class="row">
+|							<div class="col-xs-4">
+|								<div class="col-xs-10" style="padding: 0px;">
+|									<input id="newAtpName" name="id" type="text" class="form-control input-sm" placeholder="Додати нове АТП"/>
+|								</div>
+|								<div class="col-xs-2">
+|									<button id="changeAtp" type="button" class="btn-xs btn-success disabled" data-tooltip="tooltip" aria-hidden="true" title="Додати новий елемент / редагувати вибранний"><span class="glyphicon glyphicon-ok"></span></button>
+|								</div>
+|								<input id="editedAtpId" name="editedAtpId" type="hidden"/>
+|							</div>
+|							<div class="col-xs-4 col-xs-offset-1">
+|								<div class="col-xs-10" style="padding: 0px;">
+|									<input id="newAvtoTypeName" name="name" type="text" class="form-control input-sm" placeholder="Додати марку машини"/>
+|								</div>
+|								<div class="col-xs-2">
+|									<button id="changeMarka" type="button" class="btn-xs btn-success disabled" data-tooltip="tooltip" aria-hidden="true" title="Додати новий елемент / зберегти зміни редагування"  disabled><span class="glyphicon glyphicon-ok"></span></button>
+|								</div>
+|								<input id="editedMarkaId" name="editedMarkaId" type="hidden"/>
+|							</div>
+|						</div>
+|						<br>
+|						<input type="hidden" id="avtoId" name="avtoId"/>
+|                     </form>
+|                    <div class="row" id="barCodeBlock">
+|                        <div class="col-xs-6">
+|                             <img id="barcode" alt="Штрихкод" src=""/>&nbsp;
+|                             <a href="#" style="float-left;" class="btn btn-info" id="printBarCode"
+|                                onClick="printImage()"><span class="glyphicon glyphicon-print"></span> Друкувати
+|                                 штрих-код</a>
+|                         </div>
+|                     </div>
+|                 </div>
+|             </div>
+|             <div class="modal-footer">
+|                 <a href="#" class="btn btn-danger" id="closeAvto" data-dismiss="modal"><span
+|                         class="glyphicon glyphicon-remove"></span> Закрити</a>
+|                 <a href="#" class="btn btn-warning" id="resetAvto"><span class="glyphicon glyphicon-share-alt"></span>
+|                     Оновити</a>
+|                 <a href="#" class="btn btn-success disabled" id="saveAvto"><span class="glyphicon glyphicon-ok"></span> Зберегти
+|                     зміни</a>
+|             </div>
+|         </div>
+|     </div>
+|  </div>
+|</div>
+
+
+| <div id="dialogDelMarka" class="modal bs-example-modal-sm modalDialog" tabindex="-1" data-backdrop="static" role="dialog" aria-hidden="true">
+|    <div class="modal-dialog modal-sm">
+|         <div class="modal-content">
+|             <div class="modal-header">
+|                 <h4>Зберегти зміни?</h4>
+|             </div>
+|             <div class="modal-body">
+|                 <div style="text-align: right;">
+|                     <button type="button" id="okBtnDelMarka" data-dismiss="modal" class="btn-success">Так</button>
+|                     <button type="button" class="btn-danger" data-dismiss="modal">НІ</button>
+|                 </div>
+|             </div>
+|         </div>
+|     </div>
+|</div>
+| <div id="dialogDelATP" class="modal bs-example-modal-sm modalDialog" tabindex="-1" data-backdrop="static" role="dialog" aria-hidden="true">
+|    <div class="modal-dialog modal-sm">
+|         <div class="modal-content">
+|             <div class="modal-header">
+|                 <h4>Зберегти зміни?</h4>
+|             </div>
+|             <div class="modal-body">
+|                 <div style="text-align: right;">
+|                     <button type="button" id="okBtnDelATP" data-dismiss="modal" class="btn-success">Так</button>
+|                     <button type="button" class="btn-danger" data-dismiss="modal" aria-hidden="true">НІ</button>
+|                 </div>
+|             </div>
+|         </div>
+|     </div>
+|</div>
+| <div id="dialogEditMarka" class="modal bs-example-modal-sm" tabindex="-1" data-backdrop="static" role="dialog" aria-hidden="true">
+|    <div class="modal-dialog modal-sm">
+|         <div class="modal-content">
+|             <div class="modal-header">
+|                 <h4>Зберегти зміни?</h4>
+|             </div>
+|             <div class="modal-body">
+|                 <div style="text-align: right;">
+|                     <button type="button" id="okBtnEditMarka" data-dismiss="modal" class="btn-success">Так</button>
+|                     <button type="button" class="btn-danger cancelBtn" data-dismiss="modal" aria-hidden="true">НІ</button>
+|                 </div>
+|             </div>
+|         </div>
+|     </div>
+|</div>
+|<div id="dialogATP" class="modal bs-example-modal-sm modalDialog" tabindex="-1" data-backdrop="static" role="dialog" aria-hidden="true">
+|    <div class="modal-dialog">
+|         <div class="modal-content">
+|             <div class="modal-header">
+|                 <h4>Редагування данних АТП</h4>
+|             </div>
+|             <div class="modal-body">
+|               <div class="row">
+|                   <div class="col-md-6">
+|                       <input id="atpName" name="name" type="text" class="form-control" placeholder="Коротка назва"/>
+|                   </div>
+|               </div>
+|               <br>
+|               <div class="row">
+|                  <div class="col-md-6">
+|                       <input id="atpFullName" name="fullname" type="text" class="form-control" placeholder="Повна назва"/>
+|                   </div>
+|               </div>
+|               <br>
+|               <div class="row">
+|                  <div class="col-md-6">
+|                       <input id="atpEdrpou" name="edrpou" type="text" class="form-control" placeholder="ЄДРПОУ"/>
+|                   </div>
+|               </div>
+|               <br>
+|               <div class="row">
+|                   <div class="col-md-6">
+|                       <input id="atpIsFiz" name="isFiz" type="text" class="form-control" placeholder="Тип АТП"/>
+|                   </div>
+|               </div>
+|             </div>
+|             <div class="modal-footer">
+|                 <div style="text-align: right;">
+|                     <button type="button" id="okBtnDialogATP" data-dismiss="modal" class="btn-success">Зберегти</button>
+|                     <button type="button" class="btn-danger" data-dismiss="modal" aria-hidden="true">Закрити</button>
+|                 </div>
+|             </div>
+|         </div>
+|     </div>
+|</div>
+
+

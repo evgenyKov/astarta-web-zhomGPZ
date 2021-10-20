@@ -1,0 +1,21 @@
+const barcode = require('./barcode');
+//const bruttoList = require('./bruttoList');
+const bruttoVes = require('./bruttoVes');
+//const orderClose = require('./orderClose');
+//const orderPost = require('./orderPost');
+//const orderRows = require('./orderRows');
+//const ordersClosed= require('./ordersClosed');
+//const ordersOpened= require('./ordersOpened');
+const { report }  = require('./report');
+//const reportByDay = require('./reportByDay');
+//const reportCashe = require('./reportCashe');
+//const talons = require('./talons');
+//const talonRemove = require('./talonRemove');
+const taraVes = require('./taraVes');
+//const ttn = require('./ttn');
+//const ttnMove = require('./ttnMove');
+//const ttnSave = require('./ttnSave');
+//const ttnSplit = require('./ttnSplit');
+const source = require('./source');
+
+module.exports = { barcode, bruttoVes, report, taraVes, source }

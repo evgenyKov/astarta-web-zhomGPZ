@@ -1,0 +1,12 @@
+doctype html
+html
+	head
+		title #{title}
+		include includes/head
+		style .info {color:navy;font-weight:bold;float: right;}
+	body
+		include includes/menu
+		div#panel(style="margin-top:-17px;margin-bottom:-8px;") &nbsp;
+			p ADMIN
+		include includes/scripts
+		script(type="text/javascript",src="js/tools.js")

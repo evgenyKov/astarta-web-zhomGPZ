@@ -1,0 +1,78 @@
+|<div class="modal" id="avtoInfo">
+|    <div class="modal-dialog  modal-lg">
+|        <div class="modal-content">
+|            <div class="modal-header">
+|                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+|                <h3>Редагування даних про водія</h3>
+|            </div>
+|            <div class="modal-body">
+|                <div class="container">
+|                    <form id="avtoForm">
+|                        <div class="row">
+|                            <div class="col-xs-3">
+|                                <input id="firstName" name="firstName" type="text" class="form-control input-sm"
+|                                       placeholder="Імя"/>
+|                            </div>
+|                            <div class="col-xs-3">
+|                                <input id="middleName" name="middleName" type="text" class="form-control input-sm"
+|                                       placeholder="По батькові"/>
+|                            </div>
+|                            <div class="col-xs-3">
+|                                <input id="lastName" name="lastName" type="text" class="form-control input-sm"
+|                                       placeholder="Прізвище"/>
+|                            </div>
+|                        </div>
+|                        <br>
+|                        <div class="row">
+|                            <div class="col-xs-3">
+|                                <input id="avtoTypename" name="avtoTypeId" type="text" class="form-control input-sm select2"
+|                                       placeholder="Марка машини"/>
+|                            </div>
+|                            <div class="col-xs-3">
+|                                <input id="nomer" name="nomer" class="form-control input-sm" placeholder="Номер"/>
+|                            </div>
+|                            <div class="col-xs-3">
+|                                <input id="trailer" name="trailer" class="form-control input-sm" placeholder="Причіп"/>
+|                            </div>
+|                        </div>
+|                        <br>
+|                        <div class="row">
+|                            <div class="col-xs-3">
+|                                <input id="atpId" name="atpId" type="text" class="form-control input-sm select2"
+|                                       placeholder="АТП"/>
+|                            </div>
+|                            <div class="col-xs-3">
+|                                <input id="drivingPermit" name="drivingPermit" class="form-control input-sm"
+|                                       placeholder="Посвідчення"/>
+|                            </div>
+|                            <div class="col-xs-2">
+|                                <a href="javascript: editATP()">Список АТП</a>
+|                            </div>
+|                            <div class="col-xs-2">
+|                                <a href="javascript: editAvtoType()">Марки машин</a>
+|                            </div>
+|                        </div>
+|                        <br>
+|                        <input type="hidden" id="avtoId" name="avto_id"/>
+|                    </form>
+|                    <div class="row" id="barCodeBlock">
+|                        <div class="col-xs-6">
+|                            <img id="barcode" alt="Штрихкод" src=""/>&nbsp;
+|                            <a href="#" style="float-left;" class="btn btn-info" id="printBarCode"
+|                               onClick="printImage()"><span class="glyphicon glyphicon-print"></span> Друкувати
+|                                штрих-код</a>
+|                        </div>
+|                    </div>
+|                </div>
+|            </div>
+|            <div class="modal-footer">
+|                <a href="#" class="btn btn-danger" id="closeAvto" data-dismiss="modal"><span
+|                        class="glyphicon glyphicon-remove"></span> Закрити</a>
+|                <a href="#" class="btn btn-warning" id="resetAvto"><span class="glyphicon glyphicon-share-alt"></span>
+|                    Оновити</a>
+|                <a href="#" class="btn btn-success" id="saveAvto"><span class="glyphicon glyphicon-ok"></span> Зберегти
+|                    зміни</a>
+|            </div>
+|        </div>
+|    </div>
+|</div>

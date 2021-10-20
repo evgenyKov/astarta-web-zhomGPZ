@@ -1,0 +1,25 @@
+doctype html
+html
+	head
+		link(rel="stylesheet",href="css/bootstrap.min.css")
+		link(rel="stylesheet",href="css/select2.css")
+		link(rel="stylesheet",href="css/select2-bootstrap.css")
+		link(rel="stylesheet",href="css/login.css")
+		script(type="text/javascript",src="js/lib/jquery.min.js")
+		script(type="text/javascript",src="js/lib/bootstrap.min.js")
+		script(type="text/javascript",src="js/lib/select2/select2.min.js")
+		script(type="text/javascript",src="js/login.js")
+	body
+		br
+		div.container
+			div.row
+				h3.text-center(style="color:red;") #{badPassword}
+			div.row
+				div.col-sm-6.col-md-4.col-md-offset-4
+					h1.text-center.login-title ВХІД В СИСТЕМУ ПРИЙОМКИ ЖОМУ !{testVarning}
+					div.account-wall
+						img.profile-img(src="img/photo.jpg")
+						form#loginForm.form-signin(method="POST")
+							input#login.form-control(name="login",type="text",placeholder="Користувач",required,autofocus)
+							input#password.form-control(name="password" type="password" class="form-control" placeholder="Пароль" required)
+							button.btn.btn-lg.btn-primary.btn-block(type="submit") Увійти
